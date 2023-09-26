@@ -15,7 +15,7 @@ jobs:
         dotnet-version: '6.0.x'
 
     - name: Change to project directory
-      run: cd Softwareprozesse/ConsoleApp1
+      run: cd ConsoleApp1/ConsoleApp1
 
     - name: Install dependencies
       run: dotnet restore
