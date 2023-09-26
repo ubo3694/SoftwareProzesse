@@ -1,23 +1,27 @@
+name: .NET Core CI
 
-on: [push]
+on:
+  push:
+    branches: [ main ]
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v2
 
-    - name: List directory contents
-      run: ls -al
-
-    - name: Setup dotnet
-      uses: actions/setup-dotnet@v3
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: '6.0.x'
+        dotnet-version: '6.0.x' # Hier können Sie die gewünschte .NET-Version einstellen.
 
-    - name: Install dependencies
-      run: dotnet restore Softwareprozesse/ConsoleApp1/ConsoleApp1.sln
+    - name: Restore dependencies
+      run: dotnet restore ConsoleApp1/ConsoleApp1.sln
 
     - name: Build
-      run: dotnet build Softwareprozesse/ConsoleApp1/ConsoleApp1.sln
+      run: dotnet build ConsoleApp1/ConsoleApp1.sln --no-restore
+
+    # Optional: Wenn Sie Tests in Ihrem Projekt haben, können Sie die folgenden Schritte hinzufügen:
+    # - name: Test
+    #   run: dotnet test ConsoleApp1/ConsoleApp1.sln --no-build
