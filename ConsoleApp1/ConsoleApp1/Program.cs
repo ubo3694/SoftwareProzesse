@@ -14,6 +14,6 @@ public class Program
     public static void Main(string[] args)
     {
         SimpleAdder adder = new SimpleAdder();
-        Console.WriteLine("Test: " + (adder.Add(3, 4) == 7));
+        Console.WriteLine("Test: " + (adder.Add(4, 3) == 7));
     }
 }
