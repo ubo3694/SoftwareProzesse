@@ -22,6 +22,6 @@ jobs:
     - name: Build
       run: dotnet build ConsoleApp1/ConsoleApp1.sln --no-restore
 
-    # Optional: Wenn Sie Tests in Ihrem Projekt haben, können Sie die folgenden Schritte hinzufügen:
-    # - name: Test
-    #   run: dotnet test ConsoleApp1/ConsoleApp1.sln --no-build
+    # Führen Sie die Unit-Tests mit dem dotnet test-Befehl aus.
+    - name: Test
+      run: dotnet test ConsoleApp1/ConsoleApp1.sln --no-build
