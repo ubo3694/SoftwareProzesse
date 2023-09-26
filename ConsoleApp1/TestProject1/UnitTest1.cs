@@ -12,7 +12,7 @@ namespace TestProject1
             var adder = new SimpleAdder();
 
             // Act
-            var result = adder.Add(3, 4);
+            var result = adder.Add(43, 4);
 
             // Assert
             Assert.Equal(7, result);
